@@ -1,0 +1,17 @@
+<script>
+
+import services from './services'
+import { $utils, $http } from './helper'
+
+// eslint-disable-next-line no-undef
+const injectRef = Object.getPrototypeOf(global) || global
+
+/* 注入 runtime/regenerator，以增加对 async/await 的支持 */
+injectRef.regeneratorRuntime = require('@babel/runtime/regenerator')
+
+injectRef.$http = $http
+injectRef.$utils = $utils
+injectRef.$services = services
+
+export default {}
+</script>

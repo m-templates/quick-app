@@ -1,0 +1,38 @@
+{
+  "name": "@m.wang/quick-app",
+  "version": "0.0.1",
+  "description": "Created by mz-cli",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz",
+    "release": "standard-version && npm publish --access public&& git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m-templates/quick-app.git"
+  },
+  "author": "M.Wang <wangmin2@meizu.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m-templates/quick-app/issues"
+  },
+  "homepage": "https://github.com/m-templates/quick-app",
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "standard-version": "^6.0.1",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  }
+}
